@@ -2,37 +2,32 @@
 
 ## 1. Decisión de arquitectura (lo que se define una sola vez)
 
-| Esfera | Cuenta dueña | Qué vive ahí |
-|---|---|---|
-| Personal | fernandita.gonzalez@gmail.com | Familia, amistades, escuela de los hijos, médicos, servicios del hogar |
-| Empresa | fernanda.gonzalvarez@gmail.com | Clientes, proveedores, contratistas, equipo, prospectos |
-| Outlook | Solo lectura / consulta | No se capturan contactos aquí; se alimenta desde Google |
+| Elemento | Dónde vive |
+|---|---|
+| Todos los contactos (personales, comunidades y trabajo) | Cuenta personal de Google |
+| Contactos de trabajo | Misma cuenta, con etiqueta `Chamba` |
+| Outlook | Solo consulta; no se capturan contactos ahí |
 
 Reglas:
 
-1. **Una sola fuente de verdad por esfera.** Cada contacto vive en una sola cuenta de Google. Nunca en la memoria del teléfono ni en la SIM.
-2. **Outlook no es fuente.** Outlook guarda "contactos sugeridos" (solo nombre y correo) automáticamente; por eso aparecen incompletos. Se capturan en Google y Outlook solo consulta.
-3. **Si alguien es mixto** (amiga que además es proveedora): va en Empresa, con la etiqueta `Personal` adicional.
+1. **Una sola fuente de verdad.** Nada en la memoria del teléfono, la SIM ni Outlook.
+2. **La red es de la persona, no de la empresa.** Por eso todo vive en la cuenta personal.
+3. **Outlook no es fuente.** Guarda "contactos sugeridos" solo con nombre y correo.
 
-## 2. Formato estándar de cada contacto
+## 2. Formato estándar: tres tipos de contacto
 
-| Campo | Regla | Ejemplo |
-|---|---|---|
-| Nombre | Nombre de pila | Ana Lucía |
-| Apellidos | Ambos si se conocen | Martínez Ruiz |
-| Empresa | **Siempre lleno.** En personales, el contexto | Svatek / Escuela Sofía / Familia |
-| Puesto | Rol o relación | Gerente de proyecto / Mamá de Diego |
-| Correo | En minúsculas | ana.martinez@empresa.com |
-| Teléfono | Formato internacional | +52 55 1234 5678 |
-| Etiquetas | 1 a 3 (ver catálogo) | Cliente, Obra Polanco |
-| Notas | `Origen:` cómo llegó + fecha | Origen: Junta de arranque obra Polanco, oct 2026. La presentó Jorge. |
+Regla general: **Empresa = el grupo con el que ubicas a la persona.**
 
-**Por qué Empresa siempre lleno:** el buscador del teléfono (iPhone y Android) busca por nombre y empresa, pero no siempre por notas. Si no recuerdas el nombre, escribes "Polanco" o "Escuela" y aparece.
+| Tipo | Empresa | Puesto | Departamento | Relación |
+|---|---|---|---|---|
+| 1. Escuela de los hijos | Escuela | Hijo o hija con quien se relaciona | Vínculo (Mamá de Tian) | Tian, tipo Hijo |
+| 2. Comunidades (programas, generaciones, deportes, vecinos) | Grupo + generación (Medex 19-21) | Su cargo y empresa real | Subgrupo (Equipo 4) | Si aplica |
+| 3. Trabajo y servicios | Su empresa real | Cargo o rol | Vínculo contigo | Si aplica |
 
-### Catálogo de etiquetas (máximo 10, no inventar más)
-
-- Empresa: `Cliente`, `Proveedor`, `Contratista`, `Equipo`, `Prospecto`, `Obra <nombre>`
-- Personal: `Familia`, `Amistades`, `Hijos-Escuela`, `Hogar-Servicios`, `Salud`
+- **Notas:** `Origen:` cómo llegó + fecha. Sin rastros automáticos de WhatsApp.
+- **Relación:** acepta cualquier nombre, aunque no sea contacto. Sirve para "de quién viene" (primo de, esposa de, mamá de).
+- **Etiquetas (para filtrar):** una por hijo o hija, `Medex`, `Medex Girl`, `Chamba`. No crear más sin necesidad.
+- Android busca en todos los campos, así que cualquier dato de los anteriores sirve para encontrar a alguien.
 
 ## 3. Plan de ejecución (bloques cortos)
 
@@ -70,16 +65,16 @@ Genera `importar_personal.csv` e `importar_empresa.csv` en formato de Google Con
 ### Bloque E — Configurar el teléfono (15 min)
 **Android**
 - Ajustes → Cuentas: ambas cuentas de Google con Contactos y Calendario activados.
-- App Contactos → Ajustes → Cuenta predeterminada para contactos nuevos → **empresa** (el volumen nuevo vendrá de ahí).
+- App Contactos → Ajustes → Cuenta predeterminada para contactos nuevos → **personal** (ahí vive todo).
 - Importar el .vcf del dispositivo al lugar que corresponda y borrar los del dispositivo/SIM.
 
 **iPhone**
 - Ajustes → Contactos → Cuentas: agregar ambas cuentas de Gmail con Contactos activado.
-- Ajustes → Contactos → Cuenta predeterminada → la de **empresa**.
+- Ajustes → Contactos → Cuenta predeterminada → la **personal**.
 - Desactivar Contactos en iCloud (si no, se vuelve una tercera fuente de caos).
 
 ### Bloque F — Outlook
-- Outlook (web o nuevo Outlook) → Agregar cuenta → conectar la cuenta de Google de empresa: los contactos de Google aparecen al redactar.
+- Outlook (web o nuevo Outlook) → Agregar cuenta → conectar la cuenta personal de Google: los contactos de Google aparecen al redactar.
 - Desactivar el guardado automático de contactos sugeridos, si tu versión lo permite.
 - En Outlook móvil: Ajustes → cuenta → "Sincronizar contactos" solo si quieres verlos en el teléfono; si ya están en Google, dejarlo apagado para no duplicar.
 
